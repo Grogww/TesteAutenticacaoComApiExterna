@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Teste OAuth</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+            background: #f5f5f7;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 { margin: 0 0 12px; color: #1a1a1a; font-size: 1.6rem; }
+        p { color: #555; line-height: 1.5; }
+        .btn-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: #4285F4;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            margin-top: 16px;
+            transition: background 0.2s;
+        }
+        .btn-google:hover { background: #357ae8; }
+        .error {
+            background: #fdecea;
+            color: #b71c1c;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Teste de Autenticacao OAuth</h1>
+        <p>Faca login com sua conta Google para acessar a area protegida.</p>
+        <% if (error === 'unauthorized') { %>
+            <div class="error">Login nao autorizado. Verifique seu dominio de email.</div>
+        <% } %>
+        <a class="btn-google" href="/auth/google">Entrar com Google</a>
+    </div>
+</body>
+</html>
